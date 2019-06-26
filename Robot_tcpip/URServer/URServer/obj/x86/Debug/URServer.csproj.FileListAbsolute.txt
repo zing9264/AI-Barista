@@ -1,0 +1,5 @@
+f:\Users\Administrator\Desktop\URServer\URServer\bin\Debug\URServer.exe
+f:\Users\Administrator\Desktop\URServer\URServer\bin\Debug\URServer.pdb
+f:\Users\Administrator\Desktop\URServer\URServer\obj\x86\Debug\URServer.csprojResolveAssemblyReference.cache
+f:\Users\Administrator\Desktop\URServer\URServer\obj\x86\Debug\URServer.exe
+f:\Users\Administrator\Desktop\URServer\URServer\obj\x86\Debug\URServer.pdb
