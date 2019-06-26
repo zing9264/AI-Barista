@@ -60,7 +60,12 @@ ws.onmessage = function(event){
 
 function btnclicked(event) {
     console.log(event.srcElement.id);
-    ws.send(event.srcElement.id);
+    if(lock=='locking'){
+        console.log("locking wait a minute ,and resend it")
+        return
+    }
+    ws.send(event.srcElement.id);    
+    console.log("send success");
 }
 
 btn1.addEventListener("click",btnclicked);
