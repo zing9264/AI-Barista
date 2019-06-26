@@ -8,7 +8,6 @@ def new_client(client, server):
     print("New client connected and was given id %d" % client['id'])
     if  islock==1:
         server.send_message_to_all("locking")
-        return
     else :
         server.send_message_to_all("unlock")
 
@@ -20,12 +19,10 @@ def client_left(client, server):
 # Called when a client sends a message
 def message_received(client, server, message):
     global islock
+    server.send_message_to_all("locking")
     if  islock==1:
         print("locking proccess!")
-        server.send_message_to_all("locking")
         return
-    else :
-        server.send_message_to_all("unlock")
     islock=1
     time.sleep(3);
     if len(message) > 200:
@@ -35,7 +32,6 @@ def message_received(client, server, message):
     fp.write(message)
     fp.close()
     islock=0
- 
     server.send_message_to_all("unlock")
     print("unlock proccess!")
 

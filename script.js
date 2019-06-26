@@ -52,6 +52,9 @@ ws.addEventListener("close", function(event) {
 ws.onmessage = function(event){
     console.log(typeof event.data );
     console.log(event.data );
+    if(event.data=="locking" ||event.data=="unlock"){
+        lock=event.data;
+    }
 };
 
 
