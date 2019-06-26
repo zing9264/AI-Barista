@@ -1,20 +1,30 @@
-import socket
+from websocket_server import WebsocketServer
 
-HOST='127.0.0.1'
+# Called for every client connecting (after handshake)
+def new_client(client, server):
+    print("New client connected and was given id %d" % client['id'])
+   # server.send_message_to_all("Hey all, a new client has joined us")
+
+
+# Called for every client disconnecting
+def client_left(client, server):
+    print("Client(%d) disconnected" % client['id'])
+
+
+# Called when a client sends a message
+def message_received(client, server, message):
+    if len(message) > 200:
+        message = message[:200]+'..'
+    print("Client(%d) said: %s" % (client['id'], message))
+    fp = open("filename.txt", "a")
+    fp.write(message);
+    fp.close();
+   # server.send_message_to_all("Client(%d) said: %s" % (client['id'], message))
+
+
 PORT=8080
-
-s=socket.socket(socket.AF_INET,socket.SOCK_STREAM)
-s.bind((HOST,PORT))
-s.listen(5)
-c,addr=s.accept()
-request=c.recv(1024)
-
-print ('request is: ',request)
-print ("\n--------------------------\n")
-print ('Connected by', addr)
-while True:
-    request=c.recv(1024)
-    print ('request is: ',request)
-   
-c.close()
-
+server = WebsocketServer(PORT)
+server.set_fn_new_client(new_client)
+server.set_fn_client_left(client_left)
+server.set_fn_message_received(message_received)
+server.run_forever()
