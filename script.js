@@ -1,6 +1,6 @@
 
 
-
+var lock='unlock';
 
 var btn1 = document.getElementById("btn1");
 var btn2 = document.getElementById("btn2");
@@ -50,14 +50,8 @@ ws.addEventListener("close", function(event) {
 });
 
 ws.onmessage = function(event){
-    if(typeof event.data === String) {
-        console.log("Received data string");
-    }
-
-    if(event.data instanceof ArrayBuffer){
-        var buffer = event.data;
-        console.log("Received arraybuffer");
-    }
+    console.log(typeof event.data );
+    console.log(event.data );
 };
 
 
