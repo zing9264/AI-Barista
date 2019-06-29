@@ -1,6 +1,7 @@
 
 
 var lock='unlock';
+var uploadFile ;
 
 var btn1 = document.getElementById("btn1");
 var btn2 = document.getElementById("btn2");
@@ -64,10 +65,10 @@ function btnclicked(event) {
         console.log("locking wait a minute ,and resend it")
         return
     }
-    ws.send(event.srcElement.id);    
+    ws.send(event.srcElement.id);
     console.log("send success");
 }
 
 btn1.addEventListener("click",btnclicked);
 btn2.addEventListener("click",btnclicked);
-btn3.addEventListener("click",btnclicked);
+btn3.addEventListener("click",sendFile);
