@@ -1,17 +1,176 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>咖啡專題 圖片上傳系統</title>
-</head>
-<body>
-    <h1>使用Flask上傳練習</h1>
-    <form action="/upload" enctype='multipart/form-data' method='POST'>
-        <input type="file" name="file" style="margin-top:20px;"/>
-        <br>
-        <i>輸入一段文字:</i>
-        <input type="text" class="txt_input" name="name"  value="可以改動我" style="margin-top:10px;"/>
-        <input type="submit" value="上傳" class="button-new" style="margin-top:15px;"/>
-    </form>
-</body>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="google-signin-client_id" content="927126994152-kcbta7dgag3ur2otkqkmqfli8k5dngns.apps.googleusercontent.com">
+    <title>林泰吉教授109級專題</title>
+    <link href="https://fonts.googleapis.com/css?family=Nunito|Open+Sans" rel="stylesheet">
+    <link rel="stylesheet" href="static/css/style.css"/>
+    <link rel="stylesheet" href="static/css/flashcard-style.css"/>
+    <script src="https://code.jquery.com/pep/0.4.1/pep.js"></script>
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
+    <script src="static/js/constants.js" defer></script>
+
+    <script src="static/js/menu-screen.js" defer></script>
+
+    <script src="static/js/introduce.js" defer></script>
+    <script src="static/js/machinearm.js" defer></script>
+
+    <script src="static/js/login.js" defer></script>
+    <script src="static/js/RegorLog.js" defer></script>
+    <script src="static/js/register.js" defer></script>
+    <script src="static/js/demo.js" defer></script>
+    <script src="static/js/app.js" defer></script>
+    <script src="static/js/main.js" defer></script>
+    <script src="static/js/script.js" defer></script>
+
+    </script>
+  </head>
+  <body>
+    <article>
+    <div id="menu">
+      <div class="contents inactive">
+        <header>
+          <h1>林泰吉教授109級專題</h1>
+          <h2>智慧咖啡沖煮:</h2>
+        </header>
+        <div id="choices"></div>
+      </div>
+    </div>
+
+    <div id="arm" class="">
+      <h3> 請先上傳照片<br>
+           先進行咖啡粉沫分布分析，再開始沖煮 <br>
+           <br><br></h3>
+       <div class="video-menu-buttons file-box">
+        <form action="/upload" enctype='multipart/form-data' method='POST'>
+          <input  name="textfield" id="textfield" class="filename">
+          <input  type="button" class="button" value="選取檔案 ">
+          <input type="file" name="file" class="file" onchange="document.getElementById('textfield').value=this.value" />
+          <br>
+          <i>輸入咖啡重:</i>
+          <input type="text" class="txt_input" name="name"  value="0" style="margin-top:10px;"/>
+          <button type="submit" class="uploadimage">upload image</button><br><br>
+        </form>
+        <button class="startarm">start brewing</button><br><br>
+        <button class="to-menu">Back to menu</button>
+       </div>
+    </div>
+
+    <div id="introduce" class="inactive">
+      <h1>手沖咖啡:以機械手臂完美複製口味</h1>
+      <div class="item-introduce_content" >
+      <h3>當您在家裡以家中器材沖泡出了一杯完美的咖啡</br>
+        是否曾擔心因使用手動磨豆機無法重現當初的粉沫粗細</br>
+        而因此找不回當初手沖的口感呢?</br>
+        以機器學習的技術結合機械手臂</br>我們有辦法將咖啡風味重新復刻</br>
+        永遠保存這個風味</h3>
+        <span id="google"></span>
+      </div>
+      <div class="video-menu-buttons">
+        <button class="to-demo">觀看demo影片</button></br></br>
+        <button class="to-menu">Back to menu</button>
+      </div>
+    </div>
+
+    <div id="demovideo" class="inactive">
+      <h1>2019/5/4 TISCA全國沖煮賽</h1>
+      <iframe width="560" height="315" src="https://www.youtube.com/embed/AIWrDryK5Jg" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      <div class="video-menu-buttons">
+        <button class="to-menu">Back to menu</button>
+      </div>
+    </div>
+
+    <div id="RegOrLog" class="inactive">
+      <h1>請選擇要登入還是辦新帳號</h1></br></br>
+      <div class="video-menu-buttons">
+      <button class="to-register">Register</button></br></br>
+      <button class="to-login">Login</button></br></br>
+      <button class="to-menu">Back to menu</button>
+    </div>
+  </div>
+    <div id="register" class="inactive">
+      <form action="/" method="POST">
+        <p id="regresult"></p>
+        <h3>
+        帳號 :<input id="ra" type="text" name="rname" required="required"><br>
+        密碼 :<input id="rp" type="password" name="rpass" required="required"><br>
+        再次輸入密碼:<input id="rpc" type="password" name="rcpass" required="required"><br></h3>
+        <!--<button>submit</button>-->
+        <input type="submit" value="submit">
+        <div class="g-signin2" data-onsuccess="onSignIn"></div>
+        <div class="video-menu-buttons">
+        <button class="to-RegOrLog">Back to last page</button>
+      </div>
+      </form>
+    </div>
+
+    <div id="reg_result" class="inactive">
+      <span>
+        <!-- Success or fail -->
+        <!-- Go to main page -->
+        <h2>
+        帳號建立成功，回目錄繼續瀏覽</br>
+        請記得登入
+        </h2>
+        <div class="video-menu-buttons">
+          <button class="to-menu">Back to menu</button>
+        </div>
+      </span>
+    </div>
+
+    <div id="login" class="inactive">
+      <form action="/login" method="POST">
+        <h3>
+        帳號 :<input id="la" type="text" name="lname" required="required"><br>
+        密碼 :<input id="lp" type="password" name="lpass" required="required"><br>
+
+        <input type="submit" value="submit">
+        <div class="g-signin2" data-onsuccess="onSignIn">    </div></h3>
+        <div id="loginerr" class="inactive">
+            <p>帳號或密碼錯誤，請再試一次</p>
+        </div>
+        <div class="video-menu-buttons">
+        <button class="to-RegOrLog">Back to last page</button>
+        </div>
+      </form>
+    </div>
+
+    <div id="loginsuc" class="inactive">
+      <h2>
+      帳號登入成功，之前分數為:<span id="Score">_</span></br>
+      回目錄繼續瀏覽
+      </h2>
+      <div class="video-menu-buttons">
+        <button class="to-menu">Back to menu</button>
+      </div>
+    </div>
+
+    <div id="results" class="inactive">
+      <h1>Results</h1>
+      <h4>
+      <span id="show_name">_</span></br>
+    </h4>
+      <div>這次得分:<span class="percent"></span>分</div>
+      <div><span class="correct"></span> right</div>
+      <div><span class="incorrect"></span> wrong</div>
+      <div class="menu-buttons">
+        <button class="continue"></button>
+        <button class="storeScore">登記分數</button>
+        <button class="to-menu">Back to menu</button>
+      </div>
+    </div>
+
+    <div id="storesuc" class="inactive">
+      <h2>
+      <span id="score">_</span></br>
+      </h2>
+      <div class="video-menu-buttons">
+        <button class="to-menu">Back to menu</button>
+      </div>
+    </div>
+  </article>
+  </body>
+
 </html>

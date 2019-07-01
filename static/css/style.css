@@ -1,0 +1,352 @@
+/**
+ * This style is provided by the course staff. Please do not modify this file!
+ * If you need to add additional CSS styling, please change
+ * `flashcard-style.css` instead.
+ */
+ :root {
+     --box-width: 275px;
+     --box-height: 300px;
+     --choice-width: 500px;
+     --choice-height: 700px;
+     --result-height: 600px;
+ }
+ @media (max-width: 700px){
+   :root {
+       --box-width: 200px;
+       --box-height: 225px;
+       --choice-width: 300px;
+       --choice-height: 500px;
+       --result-height: 650px;
+   }
+ }
+body {
+  background-color: #d0e6df;
+  background-image: url("https://www.reviewgeek.com/thumbcache/2/200/40d2d1911ab4c74c596d316902194b0a/p/uploads/2018/08/1b6b0fd0.jpg");
+  background-size: 100% 100%;
+  color: #777e8c;
+  font-family: 'Open Sans', sans-serif;
+  user-select: none;
+  -webkit-user-select: none;
+
+  width: 100vw;
+  height: 100vh;
+  margin: 0;
+  box-sizing: border-box;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#choices div {
+  display: flex;
+  align-items: center;
+}
+
+#choices div, .menu-buttons button {
+  background-color: #FFEE99;
+  border: none;
+  border-bottom: 2px solid #d2d2d2;
+  box-sizing: border-box;
+  font-size: 1.5em;
+  height: 2.5em;
+  margin: 0.5em 0;
+  padding-left: 0.75em;
+  width: var(--choice-width);
+}
+#flashcard-container {
+  font-size: 0.5em;
+}
+.menu-buttons button {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 1.25em;
+  text-align: center;
+  width: var(--choice-width);
+}
+.video-menu-buttons button {
+  border:0;
+  background-color:	#AA7700;
+  color:#fff;
+  border-radius:5px;
+  cursor:pointer;
+  margin-left:auto;
+  margin-right:auto;
+  width: 100%;
+  height: 5vh;
+}
+.video-menu-buttons button:hover {
+  color:#003C9D;
+  background-color:#fff;
+  border:2px #003C9D solid;
+}
+.flashcard {
+  background: #66ccff;
+  border-radius: 10px;
+  box-shadow: 0 8px #00aaff;
+  box-sizing: border-box;
+  font-size: 2.5em;
+  color: white;
+  overflow: hidden;
+  margin-bottom: 8px;
+  padding: 5px;
+  user-select: none;
+  -webkit-user-select: none;
+  text-align: center;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+.flashcard-box {
+  padding: 25px;
+  position: relative;
+  height: var(--box-height);
+  width: var(--box-width);
+  box-sizing: border-box;
+  touch-action: none;
+  overflow: hidden;
+}
+
+.flashcard.definition {
+  background: white;
+  box-shadow: 0 8px #ffcc66;
+  color: black;
+  z-index: 2;
+}
+
+.flashcard-box.show-word .definition {
+  display: none;
+}
+
+h1, h2, h3, h4, h5, h6  {
+  font-family: 'Nunito', sans-serif;
+  margin: 0;
+  text-align: center;
+  color: #ffffff;
+}
+
+.inactive {
+  display: none !important;
+}
+
+#main {
+  align-items: center;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  justify-content: center;
+}
+
+#main .status {
+  background-color: #b6d9d9;
+  box-sizing: border-box;
+  border-radius: 10px;
+  color: #607d8b;
+  margin-top: 1em;
+  padding: 0.5em;
+  width: 275px;
+}
+#main h3 {
+  color: #444444;
+}
+#results h1 {
+  color: #444444;
+}
+#results h4 {
+  color: #444444;
+}
+#menu h1, h2 {
+  color: #607d8b;
+}
+#menu h2 {
+  color: #607d8b;
+}
+
+#menu {
+  align-items: center;
+  box-sizing: border-box;
+  display: flex;
+  height: var(--choice-height);
+  width: var(--choice-width);
+
+}
+#introduce .item-introduce_content {
+  top: 10%;
+  background-color: #transparent;
+  padding: 50px 80px;
+}
+#introduce h1,h3 {
+  color:#ffffff;
+}
+#quiz h1,h2,h3,h4,h5,h6,p {
+  color:#ffffff;
+}
+#menu .contents, #results {
+  background-color: white;
+  border-radius: 10px;
+  box-sizing: border-box;
+  margin: auto;
+  max-width: 600px;
+  width: 95vw;
+}
+
+#menu .contents header {
+  margin: 1em 0;
+}
+
+#menu .contents header h1 {
+  font-size: 2.5em;
+}
+
+#menu .contents header h2 {
+  font-weight: normal;
+}
+
+#results {
+  font-size: 1.25em;
+  height: var(--result-height);
+  width: var(--choice-width);
+
+  text-align: center;
+}
+
+#results .percent {
+  font-weight: bold;
+  font-size: 3em;
+}
+
+body {
+  font-family: Times, serif;
+  font-size: 20px;
+}
+
+h1, h2 {
+  font-family: Helvetica, sans-serif;
+}
+
+fieldset {
+  border: none;
+  margin: 0;
+  padding: 0;
+}
+
+input[type=text], #preview-area {
+  font-family: Times, serif;
+  font-size: 20px;
+  border: none;
+  border-bottom: 2px solid #bbb;
+  padding: 5px;
+}
+
+input[type=text]:focus {
+  border-bottom: 2px solid black;
+  outline: none;
+}
+
+input[type=submit] {
+  width: 180px;
+  padding: 12px;
+  background-color: white;
+  color: black;
+  border: 2px solid black;
+  font-size: 12px;
+  text-transform: uppercase;
+  font-family: Helvetica, Arial, sans-serif;
+  letter-spacing: 2px;
+  font-weight: bold;
+}
+
+input[type=submit]:hover  {
+  background-color: black;
+  color: white;
+}
+
+input[type=submit]:focus,
+button:focus,
+select:focus,
+#preview-area:focus {
+  outline: none;
+}
+
+select {
+  font-family: Consolas, monospace;
+  font-size: 20px;
+}
+
+#preview-area {
+  border: 2px solid #bbb;
+  display: inline-block;
+  font-family: Consolas, monospace;
+  overflow: scroll;
+  padding: 10px;
+  margin: 0;
+}
+
+.hidden {
+  display: none;
+}
+
+
+/*upload*/
+/*最外層div*/
+div.file-box {
+  position:relative;
+  width:298px
+  }
+  
+  /*檔案名稱*/
+  input.filename {
+  width:288px;
+  height:23px;
+  padding-left:8px;
+  
+  background-color:#ffffff;
+  border:#cccccc 1px solid;
+  border-radius:5px;
+  
+  color:#666666;
+  
+  }
+  
+  /*選取檔案按鈕*/
+  input.button {
+  width:82px;
+  height:27px;
+  padding-left:13px;
+  
+  background-color:#096;
+  border:0;
+  border-radius:0 5px 5px 0;
+  
+  position:absolute;
+  top:0;
+  right:0;
+  
+  color:#ffffff;
+  font-size:14px;
+  cursor:pointer;
+  }
+  
+  /*隱藏原按鈕*/
+  input.file {
+  width:297px;
+  height:24px;
+  
+  position:absolute;
+  top:0;
+  right:0;
+  
+  filter:alpha(opacity:0);
+  opacity:0;
+  
+  font-size:20px;
+  cursor:pointer;
+  }

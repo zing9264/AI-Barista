@@ -1,0 +1,15 @@
+/*
+TODO(you): Write any additional styles you need here.
+*/
+.flashcard-box .word {
+	animation: up 0.5s;
+}
+
+@keyframes up {
+	from {
+		height: 0;
+	}
+	to {
+		height: 100%;
+	}
+}

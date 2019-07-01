@@ -1,1 +1,2 @@
-pip install strUtil
+pip install flask
+pip install opencv-python

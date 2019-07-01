@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>咖啡專題 圖片上傳系統</title>
+</head>
+<body>
+    <h1>使用Flask上傳練習</h1>
+    <form action="/upload" enctype='multipart/form-data' method='POST'>
+        <input type="file" name="file" style="margin-top:20px;"/>
+        <br>
+        <i>輸入一段文字:</i>
+        <input type="text" class="txt_input" name="name"  value="可以改動我" style="margin-top:10px;"/>
+        <input type="submit" value="上傳" class="button-new" style="margin-top:15px;"/>
+    </form>
+    <h1>之前輸入的文字：{{userinput}}！</h1>
+    <img src="{{ url_for('static', filename= './images/test.jpg',_t=val1) }}" width="40%" height="40%" alt="找不到該圖片"/>
+</body>
+</html>
