@@ -2,7 +2,7 @@ import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
 
-array=np.load('new_400_1400_4422particle_info.npy')
+array=np.load('4444particle_info.npy')
 df=pd.DataFrame(array)
 a_f=a_a=0
 b_f=b_a=0
@@ -23,6 +23,7 @@ for i in range(array.shape[1]):
         d_a+=array[1][i]
 #    elif array[0][i]<400:
 #        e+=1
+
 print(df)
 print(array.shape)
 print(array[0][0])
@@ -33,7 +34,8 @@ c_a/=1.36
 print('feret: '+str(a_f)+' , '+str(b_f)+' , '+str(c_f)+' , '+str(d_f))
 print('area: '+str(a_a)+' , '+str(b_a)+' , '+str(c_a)+' , '+str(d_a))
 #print(a+b+c+d+e)
-
+total_a=a_a+b_a+c_a+d_a
+total_a/=100
 labels='400~600','600~800','800~1100','>1100'
 size=[a_a,b_a,c_a,d_a]
 explode = (0.015, 0.015, 0.015, 0.015)
@@ -50,6 +52,12 @@ plt.axis('equal')
 plt.title("particle distribution", {"fontsize" : 20})
 plt.legend(loc = "center right")
 plt.show()
-
-#plt.hist(size)
+propotion=np.array([a_a/total_a,b_a/total_a,c_a/total_a,d_a/total_a])
+#print(propotion)
+plt.figure()
+#plt.style.use('ggplot')
+plt.title("particle distribution", {"fontsize" : 20})
+plt.xlabel("(μm)")
+plt.ylabel("(%)")
+plt.bar(labels, height=propotion , width=0.5, bottom=0)
 plt.show()
