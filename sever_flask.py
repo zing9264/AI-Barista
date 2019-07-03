@@ -6,7 +6,8 @@ import cv2
 import time
 from datetime import timedelta
 from robotclient import start_Robot
-
+from ParticleAnalysis import particle_analysis
+from plot import plot
 #全域變數溝通
 brewflag=0 #設定是否可沖煮
 coffee_weight=0 #儲存咖啡重
@@ -49,6 +50,8 @@ def upload():
         img = cv2.imread(upload_path)
         cv2.imwrite(os.path.join(basepath, 'static/images', 'test.jpg'), img)
         brewflag=1
+        particle_info = particle_analysis("static/images/test.jpg")
+        plot(particle_info)
         return render_template('upload_ok.html',robot_status="待機中",coffeeWeight=coffee_weight,val1=time.time())
     brewflag=0
     return render_template('upload.html')
@@ -57,12 +60,12 @@ def upload():
 def startbrew():
     global brewflag
     global coffee_weight #儲存咖啡重
-    if brewflag==1:
-        start_Robot(1)
-    brewflag=0
+   # if brewflag==1:
+    start_Robot(1)
+   # brewflag=0
     return render_template('upload_ok.html',robot_status="開始沖煮",coffeeWeight=coffee_weight,val1=time.time())
  
 
 if __name__ == '__main__':
     # app.debug = True
-    app.run(host='192.168.0.114', port=8080, debug=True)
+    app.run(host='10.42.0.1', port=8080, debug=True)
