@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta charset="utf-8">
+    <meta charset="utf-8">    
+
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
     <meta name="google-signin-client_id" content="927126994152-kcbta7dgag3ur2otkqkmqfli8k5dngns.apps.googleusercontent.com">
     <title>林泰吉教授109級專題</title>
@@ -40,22 +41,27 @@
     </div>
 
     <div id="arm" class="inactive">
-      <h3> 請先上傳照片<br>
-           先進行咖啡粉沫分布分析，再開始沖煮 <br>
-           <br><br></h3>
-       <div class="video-menu-buttons">
-          <form action="/upload" enctype='multipart/form-data' method='POST'>
-            <input type="file" name="file" style="margin-top:20px;"/>
-            <br>
-            <i>輸入一段文字:</i>
-            <input type="text" class="txt_input" name="name"  value="可以改動我" style="margin-top:10px;"/>
-            <button type="submit" value="upload image" class="uploadimage"></button><br><br>
-            <input  value="上傳" class="button-new" style="margin-top:15px;"/>
-        </form>
-         <button class="startarm">start brewing</button><br><br>
-         <button class="to-menu">Back to menu</button>
-       </div>
-    </div>
+        <div class="contents ">
+          <header>
+            <h1>請先上傳照片</h1>
+            <h2>先進行咖啡粉分布分析，再開始沖煮:</h2>
+          </header>
+          <div id="choices" class="arm-buttons file-box">
+            <form action="/upload" enctype='multipart/form-data' method='POST'>
+              <input  name="textfield" id="textfield" class="filename">
+              <input  type="button" class="button" value="選取檔案 ">
+              <input type="file" name="file" class="file" onchange="document.getElementById('textfield').value=this.value" />
+              <div class="inactive">
+                  <i>輸入咖啡重:</i>
+                  <input type="text" class="txt_input" name="name"  value="0" style="margin-top:10px;"/>
+              </div>
+              <button type="submit" class="uploadimage">upload image</button>
+            </form>
+            <button class="startarm">start brewing</button>
+            <button class="to-menu">Back to menu</button>
+          </div>
+        </div>
+      </div>
 
     <div id="introduce" class="inactive">
       <h1>手沖咖啡:以機械手臂完美複製口味</h1>

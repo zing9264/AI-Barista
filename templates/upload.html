@@ -29,8 +29,8 @@
   </head>
   <body>
     <article>
-    <div id="menu">
-      <div class="contents inactive">
+    <div id="menu" class="inactive" >
+      <div class="contents ">
         <header>
           <h1>林泰吉教授109級專題</h1>
           <h2>智慧咖啡沖煮:</h2>
@@ -40,22 +40,25 @@
     </div>
 
     <div id="arm" class="">
-      <h3> 請先上傳照片<br>
-           先進行咖啡粉沫分布分析，再開始沖煮 <br>
-           <br><br></h3>
-       <div class="video-menu-buttons file-box">
-        <form action="/upload" enctype='multipart/form-data' method='POST'>
-          <input  name="textfield" id="textfield" class="filename">
-          <input  type="button" class="button" value="選取檔案 ">
-          <input type="file" name="file" class="file" onchange="document.getElementById('textfield').value=this.value" />
-          <br>
-          <i>輸入咖啡重:</i>
-          <input type="text" class="txt_input" name="name"  value="0" style="margin-top:10px;"/>
-          <button type="submit" class="uploadimage">upload image</button><br><br>
-        </form>
-        <button class="startarm">start brewing</button><br><br>
-        <button class="to-menu">Back to menu</button>
-       </div>
+      <div class="contents ">
+        <header>
+          <h1>請先上傳照片</h1>
+          <h2>先進行咖啡粉分布分析，再開始沖煮:</h2>
+        </header>
+        <div id="choices" class="arm-buttons file-box">
+          <form action="/upload" enctype='multipart/form-data' method='POST'>
+            <input  name="textfield" id="textfield" class="filename">
+            <input  type="button" class="button" value="選取檔案 ">
+            <input type="file" name="file" class="file" onchange="document.getElementById('textfield').value=this.value" />
+            <div class="inactive">
+                <i>輸入咖啡重:</i>
+                <input type="text" class="txt_input" name="name"  value="0" style="margin-top:10px;"/>
+            </div>
+            <button type="submit" class="uploadimage">upload image</button>
+          </form>
+          <button class="to-menu">Back to menu</button>
+        </div>
+      </div>
     </div>
 
     <div id="introduce" class="inactive">

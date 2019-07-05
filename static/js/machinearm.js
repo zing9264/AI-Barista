@@ -5,14 +5,18 @@ class MachineArm{
     this.backToMenuContainer.addEventListener('click', this.backtoMenu);
     this.startBrewBtn=containerElement.querySelector(".startarm");
     this.startBrewBtn.addEventListener('click', this._startBrew);
+    this.startBrewBtn=containerElement.querySelector(".reupload");
+    this.startBrewBtn.addEventListener('click', this.reUpload);
 
   }
   backtoMenu() {
     window.location.href="/";
   }
+  reUpload(){
+    window.location.href="/upload";
+  }
   _startBrew(){
         window.location.href="/start_brew";
-
   }
   show() {
     document.body.style.backgroundImage = "url('http://christianbackgrounds.info/new_images/25/63755653-coffee-wallpapers.jpg')";

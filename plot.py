@@ -51,7 +51,7 @@ def plot(array):
     plt.axis('equal')
     plt.title("particle distribution", {"fontsize" : 20})
     plt.legend(loc = "center right")
-    plt.savefig("pie.png")
+    plt.savefig("/static/images/pie.png")
     propotion=np.array([a_a/total_a,b_a/total_a,c_a/total_a,d_a/total_a])
     #print(propotion)
     plt.figure()
@@ -60,5 +60,5 @@ def plot(array):
     plt.xlabel("(μm)")
     plt.ylabel("(%)")
     plt.bar(labels, height=propotion , width=0.5, bottom=0)
-    plt.savefig("bar.png")
+    plt.savefig("/static/images/bar.png")
     return

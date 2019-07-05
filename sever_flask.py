@@ -50,8 +50,8 @@ def upload():
         img = cv2.imread(upload_path)
         cv2.imwrite(os.path.join(basepath, 'static/images', 'test.jpg'), img)
         brewflag=1
-        particle_info = particle_analysis("static/images/test.jpg")
-        plot(particle_info)
+        #particle_info = particle_analysis("static/images/test.jpg")
+        #plot(particle_info)
         return render_template('upload_ok.html',robot_status="待機中",coffeeWeight=coffee_weight,val1=time.time())
     brewflag=0
     return render_template('upload.html')
@@ -63,9 +63,10 @@ def startbrew():
    # if brewflag==1:
     start_Robot(1)
    # brewflag=0
-    return render_template('upload_ok.html',robot_status="開始沖煮",coffeeWeight=coffee_weight,val1=time.time())
+    return render_template('upload_ok.html',robot_status="開始沖煮，等待沖泡完成",coffeeWeight=coffee_weight,val1=time.time())
  
 
 if __name__ == '__main__':
     # app.debug = True
-    app.run(host='10.42.0.1', port=8080, debug=True)
+   # app.run(host='10.42.0.1', port=8080, debug=True)
+   app.run(host='192.168.0.114', port=8080, debug=True)

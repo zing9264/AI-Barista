@@ -20,9 +20,10 @@
    }
  }
 body {
-  background-color: #d0e6df;
-  background-image: url("https://www.reviewgeek.com/thumbcache/2/200/40d2d1911ab4c74c596d316902194b0a/p/uploads/2018/08/1b6b0fd0.jpg");
-  background-size: 100% 100%;
+  background-color: #e4ac78;
+ /* background-image: url("https://www.reviewgeek.com/thumbcache/2/200/40d2d1911ab4c74c596d316902194b0a/p/uploads/2018/08/1b6b0fd0.jpg");
+ */ 
+ background-size: 100% 100%;
   color: #777e8c;
   font-family: 'Open Sans', sans-serif;
   user-select: none;
@@ -54,6 +55,7 @@ body {
   padding-left: 0.75em;
   width: var(--choice-width);
 }
+
 #flashcard-container {
   font-size: 0.5em;
 }
@@ -63,6 +65,7 @@ body {
   text-align: center;
   width: var(--choice-width);
 }
+
 .video-menu-buttons button {
   border:0;
   background-color:	#AA7700;
@@ -176,7 +179,6 @@ h1, h2, h3, h4, h5, h6  {
   display: flex;
   height: var(--choice-height);
   width: var(--choice-width);
-
 }
 #introduce .item-introduce_content {
   top: 10%;
@@ -349,4 +351,56 @@ div.file-box {
   
   font-size:20px;
   cursor:pointer;
+  }
+
+
+
+  /*arm*/
+  #arm h1, h2 {
+    color: #607d8b;
+  }
+  #arm {
+    align-items: center;
+    box-sizing: border-box;
+    display: flex;
+    height: var(--choice-height);
+    width: var(--choice-width);
+  }
+  #arm .contents, #results {
+    background-color: white;
+    border-radius: 10px;
+    box-sizing: border-box;
+    margin: auto;
+    max-width: 600px;
+    width: 95vw;
+  }
+  
+  #arm .contents header {
+    margin: 1em 0;
+  }
+  
+  #arm .contents header h1 {
+    font-size: 2.5em;
+  }
+  
+  #arm .contents header h2 {
+    font-weight: normal;
+  }
+  .arm-buttons button {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 1.25em;
+    text-align: center;
+    width: var(--choice-width);
+  }
+
+  .arm-buttons button {
+    background-color: #FFEE99;
+    border: none;
+    border-bottom: 2px solid #d2d2d2;
+    box-sizing: border-box;
+    font-size: 1.5em;
+    height: 1.5em;
+    margin: 0.5em 0;
+    padding-left: 0.75em;
+    width: var(--choice-width);
   }

@@ -29,8 +29,8 @@
   </head>
   <body>
     <article>
-    <div id="menu">
-      <div class="contents inactive">
+    <div id="menu" class="inactive">
+      <div class="contents">
         <header>
           <h1>林泰吉教授109級專題</h1>
           <h2>智慧咖啡沖煮:</h2>
@@ -39,31 +39,25 @@
       </div>
     </div>
 
+
+
     <div id="arm" class="">
-      <h3> 請先上傳照片<br>
-           先進行咖啡粉沫分布分析，再開始沖煮 <br>
-           <br><br></h3>
-       <div class="video-menu-buttons">
-        <form action="/upload" enctype='multipart/form-data' method='POST'>
-          <input  name="textfield" id="textfield" class="filename">
-          <input  type="button" class="button" value="選取檔案 ">
-          <input type="file" name="file" class="file" onchange="document.getElementById('textfield').value=this.value" />
-          <br>
-          <i>輸入咖啡重:</i>
-          <input type="text" class="txt_input" name="name"  value="0" style="margin-top:10px;"/>
-          <button type="submit" class="uploadimage">upload image</button><br><br>
-        </form>
-        <h1>之前輸入的咖啡總重量：{{coffeeWeight}}！</h1>
-        <img src="{{ url_for('static', filename= './images/test.jpg',_t=val1) }}" width="40%" height="40%" alt="找不到該圖片"/>
-        
-        <button class="startarm">start brewing</button>
-        <br>        
-        <h1>手臂狀態{{robot_status}}！</h1>
-        <br>
-        <br>
-        <button class="to-menu">Back to menu</button>
-       </div>
-    </div>
+        <div class="contents ">
+          <div>
+              <h1 class="inactive">之前輸入的咖啡總重量：{{coffeeWeight}}！</h1>
+              <h1>您上傳的圖片</h1>
+              <img src="{{ url_for('static', filename= './images/test.jpg',_t=val1) }}" width="100%" alt="找不到該圖片"/>      
+              <h1>分析結果</h1>
+              <img src="{{ url_for('static', filename= './images/bar.png',_t=val1) }}" width="100%"  alt="找不到該圖片"/>      
+              <h1>手臂狀態:{{robot_status}}！</h1>
+            </div>
+          <div id="choices" class="arm-buttons file-box">
+            <button class="startarm">start brewing</button>
+            <button class="reupload">Re - Upload</button>
+            <button class="to-menu">Back to menu</button>
+          </div>
+        </div>
+      </div>
 
     <div id="introduce" class="inactive">
       <h1>手沖咖啡:以機械手臂完美複製口味</h1>
