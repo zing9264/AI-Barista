@@ -42,11 +42,17 @@
 
 
     <div id="arm" class="">
-        <div class="contents ">
+        <div class="contents upload_OK">
           <div>
               <h1 class="inactive">之前輸入的咖啡總重量：{{coffeeWeight}}！</h1>
               <h1>您上傳的圖片</h1>
-              <img src="{{ url_for('static', filename= './images/test.jpg',_t=val1) }}" width="100%" alt="找不到該圖片"/>      
+              <div class="flex">
+                  <img class=" item" src="{{ url_for('static', filename= './images/caculate_photo/rawphoto_0.jpg',_t=val1) }}" alt="找不到該圖片"/>      
+                  <img class=" item" src="{{ url_for('static', filename= './images/caculate_photo/rawphoto_1.jpg',_t=val1) }}" alt="找不到該圖片"/>      
+                  <img class=" item" src="{{ url_for('static', filename= './images/caculate_photo/rawphoto_2.jpg',_t=val1) }}"  alt="找不到該圖片"/>      
+                  <img class=" item" src="{{ url_for('static', filename= './images/caculate_photo/rawphoto_3.jpg',_t=val1) }}"  alt="找不到該圖片"/>      
+                  <img class=" item" src="{{ url_for('static', filename= './images/caculate_photo/rawphoto_4.jpg',_t=val1) }}"  alt="找不到該圖片"/>      
+              </div>
               <h1>分析結果</h1>
               <img src="{{ url_for('static', filename= './images/bar.png',_t=val1) }}" width="100%"  alt="找不到該圖片"/>      
               <h1>手臂狀態:{{robot_status}}！</h1>

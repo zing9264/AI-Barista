@@ -45,16 +45,38 @@
           <h1>請先上傳照片</h1>
           <h2>先進行咖啡粉分布分析，再開始沖煮:</h2>
         </header>
-        <div id="choices" class="arm-buttons file-box">
+        <div class="arm-buttons">                 
           <form action="/upload" enctype='multipart/form-data' method='POST'>
-            <input  name="textfield" id="textfield" class="filename">
-            <input  type="button" class="button" value="選取檔案 ">
-            <input type="file" name="file" class="file" onchange="document.getElementById('textfield').value=this.value" />
-            <div class="inactive">
+          <div id="choices" class = "file-box">
+              <input  name="textfield[]" id="textfield" class="filename">
+              <input  type="button" class="button" value="選取檔案 ">
+              <input type="file" name="file" class="file" onchange="document.getElementById('textfield').value=this.value" />
+          </div>
+          <div id="choices" class = "file-box">
+                <input  name="textfield[]" id="textfield_1" class="filename">
+                <input  type="button" class="button" value="選取檔案 ">
+                <input type="file" name="file" class="file" onchange="document.getElementById('textfield_1').value=this.value" />
+          </div>
+          <div id="choices" class = "file-box">
+              <input  name="textfield[]" id="textfield_2" class="filename">
+              <input  type="button" class="button" value="選取檔案 ">
+              <input type="file" name="file" class="file" onchange="document.getElementById('textfield_2').value=this.value" />
+          </div>
+          <div id="choices" class = "file-box">
+              <input  name="textfield[]" id="textfield_3" class="filename">
+              <input  type="button" class="button" value="選取檔案 ">
+              <input type="file" name="file" class="file" onchange="document.getElementById('textfield_3').value=this.value" />
+          </div>
+          <div id="choices" class = "file-box">
+              <input  name="textfield[]" id="textfield_4" class="filename">
+              <input  type="button" class="button" value="選取檔案 ">
+              <input type="file" name="file" class="file" onchange="document.getElementById('textfield_4').value=this.value" />
+          </div>
+          <div class="inactive">
                 <i>輸入咖啡重:</i>
                 <input type="text" class="txt_input" name="name"  value="0" style="margin-top:10px;"/>
-            </div>
-            <button type="submit" class="uploadimage">upload image</button>
+          </div>
+          <button type="submit" class="uploadimage">upload image</button>
           </form>
           <button class="to-menu">Back to menu</button>
         </div>
