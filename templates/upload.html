@@ -32,8 +32,8 @@
     <div id="menu" class="inactive" >
       <div class="contents ">
         <header>
-          <h1>林泰吉教授109級專題</h1>
-          <h2>智慧咖啡沖煮:</h2>
+          <h1>中正資工109級專題</h1>
+          <h2>AI Barista 智慧咖啡沖煮</h2>
         </header>
         <div id="choices"></div>
       </div>
@@ -52,29 +52,16 @@
               <input  type="button" class="button" value="選取檔案 ">
               <input type="file" name="file" class="file" onchange="document.getElementById('textfield').value=this.value" />
           </div>
-          <div id="choices" class = "file-box">
-                <input  name="textfield[]" id="textfield_1" class="filename">
-                <input  type="button" class="button" value="選取檔案 ">
-                <input type="file" name="file" class="file" onchange="document.getElementById('textfield_1').value=this.value" />
-          </div>
-          <div id="choices" class = "file-box">
-              <input  name="textfield[]" id="textfield_2" class="filename">
-              <input  type="button" class="button" value="選取檔案 ">
-              <input type="file" name="file" class="file" onchange="document.getElementById('textfield_2').value=this.value" />
-          </div>
-          <div id="choices" class = "file-box">
-              <input  name="textfield[]" id="textfield_3" class="filename">
-              <input  type="button" class="button" value="選取檔案 ">
-              <input type="file" name="file" class="file" onchange="document.getElementById('textfield_3').value=this.value" />
-          </div>
-          <div id="choices" class = "file-box">
-              <input  name="textfield[]" id="textfield_4" class="filename">
-              <input  type="button" class="button" value="選取檔案 ">
-              <input type="file" name="file" class="file" onchange="document.getElementById('textfield_4').value=this.value" />
-          </div>
-          <div class="inactive">
-                <i>輸入咖啡重:</i>
-                <input type="text" class="txt_input" name="name"  value="0" style="margin-top:10px;"/>
+          
+          <div class="">
+                <i>輸入咖啡正確比例:</i>
+                <div style=" display: flex;">
+                  <input type="number" class="" style="width: 13%;"name="weight_0"  value="0"/>
+                  <input type="number" class="" style="width: 13%;"name="weight_1"  value="0"/>
+                  <input type="number" class="" style="width: 13%;"name="weight_2"  value="0"/>
+                  <input type="number" class="" style="width: 13%;"name="weight_3"  value="0"/>
+                  <input type="number" class="" style="width: 13%;"name="weight_4"  value="0"/>
+                </div>
           </div>
           <button type="submit" class="uploadimage">upload image</button>
           </form>

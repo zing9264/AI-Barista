@@ -4,13 +4,15 @@ import socket
 def start_Robot(brew_type):
 
     if brew_type==1:
-        load="load /programs/u108_coffee_test/zfmilln4-19-07-08.urp\n"
+        load="load /programs/coffee_demo/DEMO_ghost4_strongwater.urp\n"
     elif brew_type==2:
-        load="load /programs/u108_coffee_test/zfmill4-19-07-08.urp\n"
+        load="load /programs/coffee_demo/DEMO_ghost4_slowwater.urp\n"
     else :
         return print("robot> error: brew_type")
 
-    HOST = "140.123.97.167"    # The remote host
+   # HOST = "140.123.97.167"    # The remote host
+    HOST = "192.168.1.2"    # The remote host
+
     PORT = 29999              # The same port as used by the server
     PORT2 = 30003
     robot = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
@@ -26,7 +28,7 @@ def start_Robot(brew_type):
     init="load installation /programs/u108_coffee_test/default.installation\n"
     play="play\n"
    #script 
-    initMovej="movej([-1.076204124943592, -1.2535856809951138, 2.1838314393273532, -0.887537832067828, -1.0542344275563273, 0.6796506164420769], a=0.5235987755982988, v=0.3490658503988659)\n"
+    initMovej="  movej([-1.0262544790851038, -1.1924670378314417, 2.0154342651367188, -0.8343752066241663, -1.0188658873187464, -0.019378010426656544], a=0.5235987755982988, v=0.3490658503988659)\n"
     a=-0.50
     RGopen="RG2(40,40,0.0,True,False,False)\n"
     RGpick="RG2(0,40,0.0,True,False,False)\n"
@@ -38,11 +40,11 @@ def start_Robot(brew_type):
     robot.send (load.encode("utf-8"))
     data = robot.recv(1024)
     print ("robot> Received:", repr(data))
-    time.sleep(7)
+    time.sleep(1)
     robot.send (poweron.encode("utf-8"))
     data = robot.recv(1024)
     print ("robot> Received:", repr(data))
-    time.sleep(7)
+    time.sleep(3)
     robot.send (brakerelease.encode("utf-8"))
     data = robot.recv(1024)
     print ("robot> Received:", repr(data))

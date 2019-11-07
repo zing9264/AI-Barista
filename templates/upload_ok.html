@@ -33,7 +33,7 @@
       <div class="contents">
         <header>
           <h1>林泰吉教授109級專題</h1>
-          <h2>智慧咖啡沖煮:</h2>
+          <h2>AI Barista 智慧咖啡沖煮</h2>
         </header>
         <div id="choices"></div>
       </div>
@@ -47,14 +47,15 @@
               <h1 class="inactive">之前輸入的咖啡總重量：{{coffeeWeight}}！</h1>
               <h1>您上傳的圖片</h1>
               <div class="flex">
-                  <img class=" item" src="{{ url_for('static', filename= './images/caculate_photo/rawphoto_0.jpg',_t=val1) }}" alt="找不到該圖片"/>      
-                  <img class=" item" src="{{ url_for('static', filename= './images/caculate_photo/rawphoto_1.jpg',_t=val1) }}" alt="找不到該圖片"/>      
-                  <img class=" item" src="{{ url_for('static', filename= './images/caculate_photo/rawphoto_2.jpg',_t=val1) }}"  alt="找不到該圖片"/>      
-                  <img class=" item" src="{{ url_for('static', filename= './images/caculate_photo/rawphoto_3.jpg',_t=val1) }}"  alt="找不到該圖片"/>      
-                  <img class=" item" src="{{ url_for('static', filename= './images/caculate_photo/rawphoto_4.jpg',_t=val1) }}"  alt="找不到該圖片"/>      
+                  <img class=" item" src="{{ url_for('static', filename= './images/raw_photo/Demo_input.jpg',_t=val1) }}" alt="找不到該圖片"/>      
               </div>
-              <h1>分析結果</h1>
-              <img src="{{ url_for('static', filename= './images/bar.png',_t=val1) }}" width="100%"  alt="找不到該圖片"/>      
+              <h1>分析結果:</h1>
+              <span style="display:block ;text-align: center;color: rgb(124, 184, 245)" >預測結果：{{predict_answer}}</span>
+              <span style="display:block ;text-align: center;color: crimson" >正確答案：{{input_answer}}</span>
+              <div class="flex">
+              <img class=" item" src="{{ url_for('static', filename= './images/result.jpg',_t=val1) }}" alt="找不到該圖片"/>      
+              </div>
+
               <h1>手臂狀態:{{robot_status}}！</h1>
             </div>
           <div id="choices" class="arm-buttons file-box">

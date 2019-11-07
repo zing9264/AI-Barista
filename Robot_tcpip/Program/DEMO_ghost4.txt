@@ -1,0 +1,191 @@
+ Program
+   Robot Program
+     'c250g_w360g'
+     RG2(40)
+     MoveJ
+       Waypoint_11
+       Waypoint_24
+       Waypoint_2
+     MoveL
+       Waypoint_10
+     RG2(0)
+     MoveL
+       wp_up
+       cup_center
+       cent_59a
+     MoveP
+       CircleMove
+         Waypoint_3
+         Waypoint_5
+       CircleMove
+         Waypoint_6
+         Waypoint_7
+       '0.54start'
+       CircleMove
+         Waypoint_128
+         Waypoint_129
+       CircleMove
+         Waypoint_130
+         next61
+       CircleMove
+         Waypoint_8
+         Waypoint_9
+       CircleMove
+         Waypoint_14
+         Waypoint_20
+       CircleMove
+         Waypoint_23
+         Waypoint_26
+     Wait: 0.5
+     'bloom finished'
+     MoveL
+       cup_cent
+     Wait: 30.0
+     'first_pour'
+     MoveP
+       cent_63a
+       Loop 2 times
+         MoveP
+           CircleMove
+             Waypoint_43
+             Waypoint_44
+           CircleMove
+             Waypoint_45
+             next_64a
+       cent_64a
+       Loop 2 times
+         MoveP
+           CircleMove
+             Waypoint_46
+             Waypoint_47
+           CircleMove
+             Waypoint_48
+             Waypoint_49
+       cent_65a
+       Loop 2 times
+         MoveP
+           CircleMove
+             Waypoint_53
+             Waypoint_54
+           CircleMove
+             Waypoint_55
+             Waypoint_56
+       cent_66a
+       Loop 1 times
+         MoveP
+           CircleMove
+             Waypoint_60
+             Waypoint_61
+           CircleMove
+             Waypoint_62
+             Waypoint_63
+       cent_67a
+       Loop 1 times
+         MoveP
+           CircleMove
+             Waypoint_67
+             Waypoint_68
+           CircleMove
+             Waypoint_69
+             Waypoint_70
+       cent_68a
+       Loop 1 times
+         MoveP
+           CircleMove
+             Waypoint_74
+             Waypoint_75
+           CircleMove
+             Waypoint_76
+             Waypoint_77
+       cent_69a
+       Loop 2 times
+         MoveP
+           CircleMove
+             Waypoint_81
+             Waypoint_82
+           CircleMove
+             Waypoint_83
+             Waypoint_84
+       cent_70a
+       Loop 2 times
+         MoveP
+           CircleMove
+             Waypoint_88
+             Waypoint_89
+           CircleMove
+             Waypoint_90
+             Waypoint_91
+       cent_71a
+       Loop 2 times
+         MoveP
+           CircleMove
+             Waypoint_102
+             Waypoint_103
+           CircleMove
+             Waypoint_104
+             Waypoint_105
+       cent_72a
+       Loop 2 times
+         MoveP
+           CircleMove
+             Waypoint_109
+             Waypoint_110
+           CircleMove
+             Waypoint_111
+             Waypoint_112
+       cent_73a
+       Loop 2 times
+         MoveP
+           CircleMove
+             Waypoint_27
+             Waypoint_28
+           CircleMove
+             Waypoint_29
+             Waypoint_30
+       Loop 2 times
+         MoveP
+           CircleMove
+             Waypoint_31
+             Waypoint_32
+           CircleMove
+             Waypoint_33
+             Waypoint_34
+       cent_74a
+       Loop 2 times
+         MoveP
+           CircleMove
+             Waypoint_35
+             Waypoint_36
+           CircleMove
+             Waypoint_37
+             Waypoint_38
+       Wait: 0.5
+       Waypoint_39
+       Wait: 2.0
+     MoveL
+       cup_cent
+     Wait: 15.0
+     MoveL
+       Waypoint_13
+       floatbox
+       putdown
+       RG2(50)
+     MoveJ
+       Waypoint_1
+       RG2(80)
+       Waypoint_4
+     MoveL
+       Waypoint_12
+       Waypoint_15
+       RG2(0)
+       Waypoint_16
+       Wait: 1.0
+       Waypoint_17
+       Waypoint_21
+       RG2(90)
+       Waypoint_18
+       MoveJ
+         Waypoint_19
+         Waypoint_22
+         RG2(20)
+         Waypoint_25

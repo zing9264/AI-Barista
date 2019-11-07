@@ -1,3 +1,10 @@
-照片.zip
+*.zip
+*.png
+*.PNG
+*.jpg
+*.jpeg
+*.JPG
 照片
-model_pre_resnet101.pth
+*.pth
+__pycache__
+image
