@@ -31,7 +31,7 @@ def index():
 # @app.route('/upload', methods=['POST', 'GET'])
 @app.route('/upload', methods=['POST', 'GET'])  # 添加路由
 def upload():
-    global brewflag #設定是否可沖煮
+    global brewflag  #設定是否可沖煮
 
     if request.method == 'POST':
         i=0
@@ -42,8 +42,8 @@ def upload():
                     # Make the filename safe, remove unsupported chars
                 return jsonify({"error": 1001, "msg": "請檢查圖檔類型，僅限png、PNG、jpg、JPG、bmp"})
             basepath = os.path.dirname(__file__)  #當前目錄
-            upload_path = os.path.join(basepath, 'static/images', secure_filename(file.filename))  # 注意：没有的文件夹一定要先创建，不然会提示没有该路径
-                # upload_path = os.path.join(basepath, 'static/images','test.jpg')  #注意：没有的文件夹一定要先创建，不然会提示没有该路径
+            upload_path = os.path.join(basepath, 'static/images', secure_filename(file.filename))  
+                # upload_path = os.path.join(basepath, 'static/images','test.jpg')  
             file.save(upload_path)
                 # 使用Opencv轉換格式
             img = cv2.imread(upload_path)
@@ -61,28 +61,10 @@ def upload():
             j=int(request.form.get(_))
             get_answer.append(j)
         
-        predict_answer=predict(correct_answer=get_answer)
-
-        '''
-        for i in range(len(f)):
-        # Check if the file is one of the allowed types/extensions
-            if not(f[i] and allowed_file(f[i].filename)):
-                    # Make the filename safe, remove unsupported chars
-                return jsonify({"error": 1001, "msg": "請檢查圖檔類型，僅限png、PNG、jpg、JPG、bmp"})
-            basepath = os.path.dirname(__file__)  # 当前文件所在路径
-            upload_path = os.path.join(basepath, 'static/images', secure_filename(f[i].filename))  # 注意：没有的文件夹一定要先创建，不然会提示没有该路径
-                # upload_path = os.path.join(basepath, 'static/images','test.jpg')  #注意：没有的文件夹一定要先创建，不然会提示没有该路径
-            f[i].save(upload_path)
-                # 使用Opencv转换一下图片格式和名称
-            img = cv2.imread(upload_path)
-            newname= "text_"+i+".jpg"
-            print(newname+"\n")
-            cv2.imwrite(os.path.join(basepath, 'static/images',newname ), img)
-            brewflag=1
-            i = i+1
-            #particle_info = particle_analysis("static/images/test.jpg")
-            #plot(particle_info)\
-        '''    
+       # predict_answer=predict(correct_answer=get_answer)
+        correct_answer = get_answer
+        predict_answer = get_answer
+    
         return render_template('upload_ok.html',robot_status="待機中" ,input_answer=get_answer,predict_answer=predict_answer,val1=time.time())
     brewflag=0
     return render_template('upload.html')
@@ -98,8 +80,6 @@ def startbrew():
 
 if __name__ == '__main__':
     # app.debug = True
-   app.run(host='10.42.0.1', port=8080, debug=True)
+   #app.run(host='10.42.0.1', port=8080, debug=True)
    #app.run(host='192.168.11.21', port=8080, debug=True)
-
- 
-   #app.run(host='192.168.43.99', port=8080, debug=True)
+   app.run(host='127.0.0.1', port=8080, debug=True)
