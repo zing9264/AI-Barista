@@ -13,7 +13,22 @@ brewflag=0 #設定是否可沖煮
 coffee_weight=0 #儲存咖啡重
 #圖片格式允許
 ALLOWED_EXTENSIONS = set(['png','jpeg' ,'jpg', 'JPG', 'PNG', 'bmp'])
- 
+
+def answer_normalize(arr=[]):
+    total=0
+    for i in range(len(arr)):
+        print(arr,len(arr),i)
+        total+=arr[i]
+    ans=[]
+
+    for i in range(len(arr)):
+        print(arr,len(arr),i)
+        if(total==0):
+            ans.append(0)
+        else:
+            ans.append((arr[i]/total)*100)
+    return ans
+
 def allowed_file(filename):
     return '.' in filename and filename.rsplit('.', 1)[1] in ALLOWED_EXTENSIONS
  
@@ -61,11 +76,13 @@ def upload():
             j=int(request.form.get(_))
             get_answer.append(j)
         
-       # predict_answer=predict(correct_answer=get_answer)
-        correct_answer = get_answer
-        predict_answer = get_answer
+        nor_ans=answer_normalize(get_answer)
+        
+        predict_answer=predict(correct_answer=nor_ans)
+        #correct_answer = get_answer
+        #predict_answer = get_answer
     
-        return render_template('upload_ok.html',robot_status="待機中" ,input_answer=get_answer,predict_answer=predict_answer,val1=time.time())
+        return render_template('upload_ok.html',robot_status="待機中" ,input_answer=nor_ans,predict_answer=predict_answer,val1=time.time())
     brewflag=0
     return render_template('upload.html')
 
@@ -81,5 +98,5 @@ def startbrew():
 if __name__ == '__main__':
     # app.debug = True
    #app.run(host='10.42.0.1', port=8080, debug=True)
-   #app.run(host='192.168.11.21', port=8080, debug=True)
-   app.run(host='127.0.0.1', port=8080, debug=True)
+   app.run(host='192.168.0.114', port=8080, debug=True)
+   #app.run(host='127.0.0.1', port=8080, debug=True)

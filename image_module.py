@@ -326,8 +326,8 @@ def preprocess(img_path, target_path,  rotateTimes):
     print("Error Files:", error_files)
 
 
-def predict(correct_answer = [14,26,35,11,14],imgOutputFolder = r"/home/ecl-123/zing/coffee_sever/image_preprocess/",
-            imgPath = r"/home/ecl-123/zing/coffee_sever/static/images/raw_photo/Demo_input.jpg"):
+def predict(correct_answer = [14,26,35,11,14],imgOutputFolder = r"/home/ecl-123/zing/AI-Barista/image_preprocess/",
+            imgPath = r"/home/ecl-123/zing/AI-Barista/static/images/raw_photo/Demo_input.jpg"):
     
     
 

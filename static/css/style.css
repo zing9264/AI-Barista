@@ -203,7 +203,7 @@ div.file-box {
 
 .upload_OK  .item {
   margin: 1%;
-  height:90% ;
+  height:auto ;
   width: 90%;
   display: flex;
   justify-content: center;
